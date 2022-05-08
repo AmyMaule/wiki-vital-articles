@@ -11,7 +11,7 @@ def titles():
   URL = "https://en.wikipedia.org/wiki/Wikipedia:Vital_articles"
   page = requests.get(URL)
 
-  # soup is a new instance of the BeautifulSoup library -  it receives page.content instead of page.text to avoid issues with character encoding
+  # soup is a new instance of the BeautifulSoup library - it receives page.content instead of page.text to avoid issues with character encoding
   soup = BeautifulSoup(page.content, "lxml")
   tags = soup.find_all("a", {"class": not "image", "title": True, "accesskey": False})
   filtered_tags = []
