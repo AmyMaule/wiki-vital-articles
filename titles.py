@@ -1,10 +1,13 @@
 from bs4 import BeautifulSoup
 from flask import Flask
 from flask import Flask, jsonify
+from flask_cors import CORS
 import requests
 import urllib.parse
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/titles/', methods=['GET'])
 def titles():
