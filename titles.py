@@ -17,7 +17,7 @@ def titles():
   filtered_tags = []
   
   for tag in tags:
-    # convert the html tag to a string 
+    # convert the html tag to a string
     tag = str(tag)
 
     # replace accented characters with their non-accented equivalent
