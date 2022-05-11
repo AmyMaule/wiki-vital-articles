@@ -51,7 +51,7 @@ def titles():
     except ValueError as ve:
       pass
 
-  response = flask.jsonify({'data': filtered_tags})
+  response = jsonify({'data': filtered_tags})
   response.headers.add('Access-Control-Allow-Origin', '*')
   return response
 
