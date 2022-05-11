@@ -6,8 +6,7 @@ import requests
 import urllib.parse
 
 app = Flask(__name__)
-# cors = CORS(app)
-# app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
 @app.route('/titles/', methods=['GET'])
 def titles():
@@ -51,9 +50,7 @@ def titles():
     except ValueError as ve:
       pass
 
-  response = jsonify({'data': filtered_tags})
-  response.headers.add('Access-Control-Allow-Origin', '*')
-  return response
+  return jsonify({'data': filtered_tags})
 
 if __name__ == '__main__':
   app.run()
